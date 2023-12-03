@@ -5,6 +5,7 @@
 #include <string.h>
 #include "Location.h"
 #include <list>
+#include <stdlib.h>
 #define _CRT_SECURE_NO_WARNINGS
 using namespace std;
 

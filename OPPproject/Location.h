@@ -3,6 +3,7 @@
 #include <fstream>
 #include <cstring>
 #include <string.h>
+#include <stdlib.h>
 
 #define _CRT_SECURE_NO_WARNINGS
 using namespace std;

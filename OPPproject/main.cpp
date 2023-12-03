@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include <stdlib.h>
 #include <fstream>
 #include <cstring>
 #include <string>
@@ -18,7 +19,7 @@ Location l5(3, new int[3] { 7, 7, 7 }, 3, 3);
 TheatreEvent e3("Nebuni din dragoste", theatre, "11/02/2022", "13:00", l4, 100, "Mara Morgeinstein~Ionut Bobonete");
 Event e5("Steaua-Dinamo", sport, "11/02/2022", "13:00", l5, 100);
 
-void Ticket(Event e1, Location l1, int seat, int row{
+void Ticket(Event e1, Location l1, int seat, int row){
 	cout << "Create a ticket" << endl;
 	char* client_name;
 	client_name = new char[20];
@@ -27,7 +28,7 @@ void Ticket(Event e1, Location l1, int seat, int row{
 	int age;
 	cout << "Introduce the client's age: ";
 	cin >> age;
-	Ticket b1(client_name, age, seat, row, normal, e1);
+	Ticket b1 (client_name, age, seat, row, normal, e1);
 	cout << b1;
 	ofstream m;
 	m.open("Saved Tickets");
@@ -462,7 +463,7 @@ void Ticket(Event e1, Location l1, int seat, int row{
 						}
 						f.close();
 						if (e5.verify_free_seat(matrix, v, o) == true) {
-							matrixe[v - 1][o - 1] = 1;
+							matrix[v - 1][o - 1] = 1;
 							ofstream f1("Meci.txt", ios::out);
 							for (int i = 0; i < l5.getNrRows(); i++) {
 								for (int j = 0; j < l5.getNrSeatsPerRow()[i]; j++) {
@@ -556,7 +557,7 @@ void Ticket(Event e1, Location l1, int seat, int row{
 						cin >> ab;
 						cout << "Sear: ";
 						cin >> cd;
-						if (ab == l5.getNrRow() && cd > 1 && cd <= l5.getNrSeatsPerRow()[ab - 1] - 1) {
+						if (ab == l5.getNrRows() && cd > 1 && cd <= l5.getNrSeatsPerRow()[ab - 1] - 1) {
 							ifstream f("Meci.txt", ios::in);
 							int** matrix = new int* [l5.getNrRows()];
 							for (int i = 0; i < l5.getNrRows(); i++) {
@@ -622,8 +623,8 @@ void Ticket(Event e1, Location l1, int seat, int row{
 
 
 			std::ifstream f1("Eveniment.txt");
-			char* nume = new char[20];
-			f1 >> nume;
+			char* name = new char[20];
+			f1 >> name;
 			string date;
 			f1 >> date;
 			string time;

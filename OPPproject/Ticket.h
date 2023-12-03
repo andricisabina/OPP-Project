@@ -11,7 +11,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 using namespace std;
 
-
 enum ticket_type { vip, normal, category1, category2, lodge, lawn, tribune1, tribune2 };
 
 class Ticket {
